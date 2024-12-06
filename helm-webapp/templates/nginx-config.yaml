@@ -1,0 +1,45 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: myhelmapp-configmap-v1
+  namespace: nginx-namespace-12090
+  uid: 5d3d29ef-7fb1-4897-a6a5-42819c4703bc
+  resourceVersion: '204315'
+  creationTimestamp: '2024-12-06T10:25:56Z'
+  labels:
+    app.kubernetes.io/instance: help-webapp-12090
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"BG_COLOR":"#12181b","CUSTOM_HEADER":"This is on the DEV environment!","FONT_COLOR":"#FFFFFF"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"help-webapp-12090"},"name":"myhelmapp-configmap-v1","namespace":"nginx-namespace-12090"}}
+  managedFields:
+    - manager: argocd-controller
+      operation: Update
+      apiVersion: v1
+      time: '2024-12-06T10:25:56Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:BG_COLOR': {}
+          'f:CUSTOM_HEADER': {}
+          'f:FONT_COLOR': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2024-12-06T10:58:23Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          'f:WELCOME_MSG': {}
+data:
+  BG_COLOR: '#12181b'
+  CUSTOM_HEADER: This is on the DEV environment!
+  FONT_COLOR: '#FFFFFF'
+  WELCOME_MSG: Welcome to NIGINX on ROSA

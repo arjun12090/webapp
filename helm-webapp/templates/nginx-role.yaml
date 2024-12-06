@@ -1,0 +1,25 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nginx-role
+  namespace: nginx-namespace-12090
+  uid: bc638e28-28dd-4a1b-884d-250f41b53245
+  resourceVersion: '218799'
+  creationTimestamp: '2024-12-06T11:19:07Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2024-12-06T11:19:07Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:rules': {}
+rules:
+  - verbs:
+      - get
+      - watch
+      - list
+    apiGroups:
+      - ''
+    resources:
+      - pods

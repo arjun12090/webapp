@@ -1,0 +1,56 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nginx-route
+  namespace: nginx-namespace-12090
+  uid: 099b1cf0-038b-4244-bb7e-863e2495d704
+  resourceVersion: '230117'
+  creationTimestamp: '2024-12-06T11:34:40Z'
+  annotations:
+    openshift.io/host.generated: 'true'
+  managedFields:
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-12-06T11:34:40Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-12-06T11:35:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:path': {}
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+spec:
+  host: nginx-route-nginx-namespace-12090.apps.rosa-01.9pgs.p1.openshiftapps.com
+  path: /
+  to:
+    kind: Service
+    name: nginx-service
+    weight: 100
+  port:
+    targetPort: 80
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: nginx-route-nginx-namespace-12090.apps.rosa-01.9pgs.p1.openshiftapps.com
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2024-12-06T11:34:40Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps.rosa-01.9pgs.p1.openshiftapps.com

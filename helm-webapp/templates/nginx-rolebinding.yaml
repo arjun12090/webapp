@@ -1,0 +1,25 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nginx-rolebinding
+  namespace: nginx-namespace-12090
+  uid: 66acf212-fd54-446e-801a-464847da47df
+  resourceVersion: '220944'
+  creationTimestamp: '2024-12-06T11:21:59Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2024-12-06T11:21:59Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:roleRef': {}
+        'f:subjects': {}
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: nginx
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: nginx-role
